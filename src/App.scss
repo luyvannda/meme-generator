@@ -1,3 +1,7 @@
+$left-purple-gradient: #672280;
+$right-purple-gradient: #A626D3;
+
+
 * {
   padding: 0;
   margin: 0;
@@ -7,4 +11,33 @@
   ::after {
     box-sizing: inherit;
   }
+}
+
+html {
+  font-size: 16px;
+}
+
+#header-component {
+  background-image: linear-gradient(to right,
+      $left-purple-gradient,
+      $right-purple-gradient );
+
+  h4 {
+    font-size: calc(1.296875rem + .3vw);
+
+    img {
+      width: 1.956875rem;
+      height: 1.63875rem;
+    }
+  }
+
+  p {
+    font-size: calc(0.75rem + .3vw);
+  }
+
+  h4,
+  p {
+    margin-bottom: 0;
+  }
+
 }

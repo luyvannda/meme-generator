@@ -6,4 +6,26 @@
 *::before,
 * ::after {
   box-sizing: inherit;
+}
+
+html {
+  font-size: 16px;
+}
+
+#header-component {
+  background-image: linear-gradient(to right, #672280, #A626D3);
+}
+#header-component h4 {
+  font-size: calc(1.296875rem + 0.3vw);
+}
+#header-component h4 img {
+  width: 1.956875rem;
+  height: 1.63875rem;
+}
+#header-component p {
+  font-size: calc(0.75rem + 0.3vw);
+}
+#header-component h4,
+#header-component p {
+  margin-bottom: 0;
 }/*# sourceMappingURL=App.css.map */
