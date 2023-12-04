@@ -22,22 +22,23 @@ html {
       $left-purple-gradient,
       $right-purple-gradient );
 
-  h4 {
-    font-size: calc(1.296875rem + .3vw);
-
+  #header-left {
     img {
       width: 1.956875rem;
       height: 1.63875rem;
     }
+
+    h4 {
+      font-size: calc(1.296875rem + .3vw);
+      margin-bottom: 0;
+    }
   }
 
-  p {
-    font-size: calc(0.75rem + .3vw);
-  }
-
-  h4,
-  p {
-    margin-bottom: 0;
+  #header-right {
+    p {
+      font-size: calc(0.75rem + .3vw);
+      margin-bottom: 0;
+    }
   }
 
 }
