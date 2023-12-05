@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -10,6 +11,10 @@
 
 html {
   font-size: 16px;
+}
+
+body {
+  font-family: "Karla", sans-serif;
 }
 
 #header-component {
@@ -25,5 +30,15 @@ html {
 }
 #header-component #header-right p {
   font-size: calc(0.75rem + 0.3vw);
+  margin-bottom: 0;
+}
+
+#meme-component #meme-button {
+  background-image: linear-gradient(to right, #672280, #A626D3);
+  border: 1px solid transparent;
+  -o-border-image: linear-gradient(to right, #672280, #A626D3) 1;
+     border-image: linear-gradient(to right, #672280, #A626D3) 1;
+}
+#meme-component #meme-button p {
   margin-bottom: 0;
 }/*# sourceMappingURL=App.css.map */
