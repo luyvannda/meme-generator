@@ -49,7 +49,7 @@ export default function Meme() {
           </Button>
         </Col>
 
-        <Col sm={9} md={12} className='pt-4 mt-3 d-flex justify-content-center'>
+        <Col sm={9} md={12} className='py-4 my-3 d-flex justify-content-center'>
           <img className='img-fluid rounded w-md-50 h-md-50 w-xl-75 h-xl-75 w-xxl-100 h-xxl-100' src={memeImage} alt="a random meme image" />
         </Col>
       </div>
