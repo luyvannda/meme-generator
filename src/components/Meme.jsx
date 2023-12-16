@@ -6,26 +6,43 @@ import memesData from './memesData';
 import { useState } from 'react';
 
 /**
-     * Challenge: Save the random meme URL in state
-     * - Create new state called `memeImage` with an
-     *   empty string as default
-     * - When the getMemeImage function is called, update
-     *   the `memeImage` state to be the random chosen
-     *   image URL
-     * - Below the div.form, add an <img /> and set the
-     *   src to the new `memeImage` state you created
-     */
+   * Challenge: Update our state to save the meme-related
+   * data as an object called `meme`. It should have the
+   * following 3 properties:
+   * topText, bottomText, randomImage.
+   * 
+   * The 2 text states can default to empty strings for now,
+   * amd randomImage should default to "http://i.imgflip.com/1bij.jpg"
+   * 
+   * Next, create a new state variable called `allMemeImages`
+   * which will default to `memesData`, which we imported above
+   * 
+   * Lastly, update the `getMemeImage` function and the markup 
+   * to reflect our newly reformed state object and array in the
+   * correct way.
+   */
 
 let url;
 
 export default function Meme() {
-  const [memeImage, setMemeImage] = useState("");
+  const [meme, setMeme] = useState({
+    topText: "",
+    bottomText: "",
+    randomImage: "http://i.imgflip.com/1bij.jpg"
+  });
+
+  const [allMemeImages, setAllMemeImages] = useState(memesData);
 
   function getMemeImage() {
-    const memesArray = memesData.data.memes;
+    const memesArray = allMemeImages.data.memes;
     const randomIndex = Math.floor(Math.random() * memesArray.length);
     url = memesArray[randomIndex].url;
-    setMemeImage(url)
+
+    setMeme(prevMeme => ({
+      ...prevMeme,
+      randomImage: url
+    }))
+
     console.log(url);
   }
 
@@ -50,7 +67,7 @@ export default function Meme() {
         </Col>
 
         <Col sm={9} md={12} className='py-4 my-3 d-flex justify-content-center'>
-          <img className='img-fluid rounded w-md-50 h-md-50 w-xl-75 h-xl-75 w-xxl-100 h-xxl-100' src={memeImage} alt="a random meme image" />
+          <img className='img-fluid rounded w-md-50 h-md-50 w-xl-75 h-xl-75 w-xxl-100 h-xxl-100' src={meme.randomImage} alt="a random meme image" />
         </Col>
       </div>
 
