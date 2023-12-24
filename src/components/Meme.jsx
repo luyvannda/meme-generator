@@ -17,8 +17,8 @@ let url;
 
 export default function Meme() {
   const [meme, setMeme] = useState({
-    topText: "",
-    bottomText: "",
+    topText: "One does not simply",
+    bottomText: "walk into Mordor",
     randomImage: "http://i.imgflip.com/1bij.jpg"
   });
 
@@ -30,9 +30,6 @@ export default function Meme() {
       [name]: value
     }))
   }
-
-  console.log(`Top Text is ${meme.topText}`);
-  console.log(`Bottom Text is ${meme.bottomText}`);
 
   // eslint-disable-next-line no-unused-vars
   const [allMemeImages, setAllMemeImages] = useState(memesData);
@@ -56,7 +53,6 @@ export default function Meme() {
             <Col sm={9} md={6} className='mb-3'>
               <Form.Control
                 name='topText'
-                placeholder="Shut up"
                 value={meme.topText}
                 onChange={handleChange}
               />
@@ -64,7 +60,6 @@ export default function Meme() {
             <Col sm={9} md={6} className='mb-3'>
               <Form.Control
                 name="bottomText"
-                placeholder="and take my money"
                 value={meme.bottomText}
                 onChange={handleChange}
               />
