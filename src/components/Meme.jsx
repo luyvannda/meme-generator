@@ -6,21 +6,12 @@ import memesData from './memesData';
 import { useState } from 'react';
 
 /**
-   * Challenge: Update our state to save the meme-related
-   * data as an object called `meme`. It should have the
-   * following 3 properties:
-   * topText, bottomText, randomImage.
-   * 
-   * The 2 text states can default to empty strings for now,
-   * amd randomImage should default to "http://i.imgflip.com/1bij.jpg"
-   * 
-   * Next, create a new state variable called `allMemeImages`
-   * which will default to `memesData`, which we imported above
-   * 
-   * Lastly, update the `getMemeImage` function and the markup 
-   * to reflect our newly reformed state object and array in the
-   * correct way.
-   */
+    * Challenge: 
+    * 1. Set up the text inputs to save to
+    *    the `topText` and `bottomText` state variables.
+    * 2. Replace the hard-coded text on the image with
+    *    the text being saved to state.
+    */
 
 let url;
 
@@ -31,6 +22,7 @@ export default function Meme() {
     randomImage: "http://i.imgflip.com/1bij.jpg"
   });
 
+  // eslint-disable-next-line no-unused-vars
   const [allMemeImages, setAllMemeImages] = useState(memesData);
 
   function getMemeImage() {
@@ -66,8 +58,15 @@ export default function Meme() {
           </Button>
         </Col>
 
-        <Col sm={9} md={12} className='py-4 my-3 d-flex justify-content-center'>
+        <Col sm={9} md={12} className='meme--container py-4 my-3 d-flex justify-content-center'>
           <img className='img-fluid rounded w-md-50 h-md-50 w-xl-75 h-xl-75 w-xxl-100 h-xxl-100' src={meme.randomImage} alt="a random meme image" />
+
+          <h2
+            className='meme--text top mt-3 pt-3 text-white text-uppercase'
+          >One does not simply</h2>
+          <h2
+            className='meme--text bottom mb-3 pb-3 text-white text-uppercase'
+          >Walk into Mordor</h2>
         </Col>
       </div>
 

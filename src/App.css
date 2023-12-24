@@ -41,4 +41,20 @@ body {
 }
 #meme-component #meme-button p {
   margin-bottom: 0;
+}
+#meme-component .meme--container {
+  position: relative;
+}
+#meme-component .meme--container .meme--text {
+  position: absolute;
+  font-family: Impact, sans-serif;
+  letter-spacing: 1px;
+  font-size: 2em;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000, 2px 2px 5px #000;
+}
+#meme-component .meme--container .top {
+  top: 0;
+}
+#meme-component .meme--container .bottom {
+  bottom: 0;
 }/*# sourceMappingURL=App.css.map */
