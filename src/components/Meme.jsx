@@ -2,16 +2,8 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import memesData from './memesData';
-import { useState } from 'react';
 
-/**
-    * Challenge: 
-    * 1. Set up the text inputs to save to
-    *    the `topText` and `bottomText` state variables.
-    * 2. Replace the hard-coded text on the image with
-    *    the text being saved to state.
-    */
+import { useState, useEffect } from 'react';
 
 let url;
 
@@ -31,13 +23,19 @@ export default function Meme() {
     }))
   }
 
-  // eslint-disable-next-line no-unused-vars
-  const [allMemeImages, setAllMemeImages] = useState(memesData);
+  const [allMemes, setAllMemes] = useState({});
+
+  useEffect(function () {
+    fetch("https://api.imgflip.com/get_memes")
+      .then(res => res.json())
+      .then(data => setAllMemes(data.data.memes))
+
+  }, [])
+
 
   function getMemeImage() {
-    const memesArray = allMemeImages.data.memes;
-    const randomIndex = Math.floor(Math.random() * memesArray.length);
-    url = memesArray[randomIndex].url;
+    const randomIndex = Math.floor(Math.random() * allMemes.length);
+    url = allMemes[randomIndex].url;
 
     setMeme(prevMeme => ({
       ...prevMeme,
@@ -45,10 +43,14 @@ export default function Meme() {
     }))
   }
 
+  function handleSubmit(event) {
+    event.preventDefault()
+  }
+
   return (
     <div id='meme-component' className="container-fluid mt-3">
       <div className='mt-4 mx-3 mx-md-4'>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Row>
             <Col sm={9} md={6} className='mb-3'>
               <Form.Control
