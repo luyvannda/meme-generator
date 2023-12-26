@@ -9,8 +9,8 @@ let url;
 
 export default function Meme() {
   const [meme, setMeme] = useState({
-    topText: "One does not simply",
-    bottomText: "walk into Mordor",
+    topText: "",
+    bottomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg"
   });
 
@@ -25,10 +25,15 @@ export default function Meme() {
 
   const [allMemes, setAllMemes] = useState({});
 
-  useEffect(function () {
-    fetch("https://api.imgflip.com/get_memes")
-      .then(res => res.json())
-      .then(data => setAllMemes(data.data.memes))
+  useEffect(() => {
+
+    async function getMemes() {
+      const res = await fetch("https://api.imgflip.com/get_memes")
+      const data = await res.json()
+      setAllMemes(data.data.memes)
+    }
+
+    getMemes()
 
   }, [])
 
@@ -55,6 +60,7 @@ export default function Meme() {
             <Col sm={9} md={6} className='mb-3'>
               <Form.Control
                 name='topText'
+                placeholder='Top text'
                 value={meme.topText}
                 onChange={handleChange}
               />
@@ -62,6 +68,7 @@ export default function Meme() {
             <Col sm={9} md={6} className='mb-3'>
               <Form.Control
                 name="bottomText"
+                placeholder='Bottom text'
                 value={meme.bottomText}
                 onChange={handleChange}
               />
@@ -77,8 +84,6 @@ export default function Meme() {
           </Col>
         </Form>
 
-
-
         <Col sm={9} md={12} className='meme--container py-4 my-3 d-flex justify-content-center'>
           <img className='img-fluid rounded w-md-50 h-md-50 w-xl-75 h-xl-75 w-xxl-100 h-xxl-100' src={meme.randomImage} alt="a random meme image" />
 
@@ -88,7 +93,6 @@ export default function Meme() {
           >{meme.bottomText}</h2>
         </Col>
       </div>
-
 
     </div>
   )
