@@ -6,7 +6,7 @@ export default function Header() {
 
       <div id="header-left"
         className="container d-flex justify-content-center justify-content-md-start gap-2 ">
-        <img src="/troll_face.png" alt="troll face icon" />
+        <img src="troll_face.png" alt="troll face icon" />
         <h4>Meme Generator</h4>
       </div>
 

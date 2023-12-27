@@ -79,7 +79,7 @@ export default function Meme() {
             <Button onClick={getMemeImage} className='w-100 pt-2 pb-2 d-flex justify-content-center align-items-center gap-1' id='meme-button'
               type="submit">
               <p className='fs-6 fw-bold'>Get a new meme image </p>
-              <img src="/painting-icon.png" alt="a painting icon" />
+              <img src="painting-icon.png" alt="a painting icon" />
             </Button>
           </Col>
         </Form>
