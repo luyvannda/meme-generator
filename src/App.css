@@ -49,8 +49,13 @@ body {
   position: absolute;
   font-family: Impact, sans-serif;
   letter-spacing: 1px;
-  font-size: 2em;
+  font-size: clamp(1.2em, 0.4em + 0.03vw, 2em);
   text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000, 2px 2px 5px #000;
+}
+@media (min-width: 768px) {
+  #meme-component .meme--container .meme--text {
+    font-size: clamp(2em, 0.3em + 0.03vw, 2.5em);
+  }
 }
 #meme-component .meme--container .top {
   top: 0;

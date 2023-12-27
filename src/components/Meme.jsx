@@ -85,11 +85,11 @@ export default function Meme() {
         </Form>
 
         <Col sm={9} md={12} className='meme--container py-4 my-3 d-flex justify-content-center'>
-          <img className='img-fluid rounded w-md-50 h-md-50 w-xl-75 h-xl-75 w-xxl-100 h-xxl-100' src={meme.randomImage} alt="a random meme image" />
+          <img className='img-fluid rounded' src={meme.randomImage} alt="a random meme image" />
 
-          <h2 className='meme--text top mt-3 pt-3 text-white text-uppercase'
+          <h2 className='meme--text top mt-3 pt-3 text-white text-center text-uppercase'
           >{meme.topText}</h2>
-          <h2 className='meme--text bottom mb-3 pb-3 text-white text-uppercase'
+          <h2 className='meme--text bottom mb-3 pb-3 text-white text-center text-uppercase'
           >{meme.bottomText}</h2>
         </Col>
       </div>

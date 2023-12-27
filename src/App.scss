@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap');
 
-
 $left-purple-gradient: #672280;
 $right-purple-gradient: #A626D3;
+
+@mixin media-query($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
 
 
 * {
@@ -73,7 +78,7 @@ body {
       position: absolute;
       font-family: Impact, sans-serif;
       letter-spacing: 1px;
-      font-size: 2em;
+      font-size: clamp(1.2em, 0.4em + 0.03vw, 2em);
       text-shadow:
         2px 2px 0 #000,
         -2px -2px 0 #000,
@@ -84,6 +89,11 @@ body {
         0 -2px 0 #000,
         -2px 0 0 #000,
         2px 2px 5px #000;
+
+      @include media-query(768px) {
+        font-size: clamp(2em, 0.3em + 0.03vw, 2.5em);
+      }
+
     }
 
     .top {
